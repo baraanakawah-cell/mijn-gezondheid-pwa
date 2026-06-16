@@ -1,27 +1,37 @@
 // =========================================
+// SERVICE WORKER REGISTREREN
+// =========================================
+if ('serviceWorker' in navigator) {
+    window.addEventListener('load', function() {
+        navigator.serviceWorker.register('/sw.js')
+            .then(function() {
+                console.log('Service worker geregistreerd!');
+            })
+            .catch(function(err) {
+                console.log('Service worker mislukt:', err);
+            });
+    });
+}
+
+// =========================================
 // LOCALSTORAGE FUNCTIES
 // =========================================
-
-// Alle maaltijden ophalen uit LocalStorage
 function getMaaltijden() {
     const data = localStorage.getItem('maaltijden');
     return data ? JSON.parse(data) : [];
 }
 
-// Maaltijden opslaan in LocalStorage
 function saveMaaltijden(maaltijden) {
     localStorage.setItem('maaltijden', JSON.stringify(maaltijden));
 }
 
-// Één maaltijd toevoegen
 function voegMaaltijdToe(maaltijd) {
     const maaltijden = getMaaltijden();
-    maaltijd.id = Date.now(); // uniek ID op basis van tijd
+    maaltijd.id = Date.now();
     maaltijden.push(maaltijd);
     saveMaaltijden(maaltijden);
 }
 
-// Één maaltijd verwijderen op basis van ID
 function verwijderMaaltijd(id) {
     const maaltijden = getMaaltijden();
     const nieuw = maaltijden.filter(m => m.id !== id);
@@ -34,28 +44,23 @@ function verwijderMaaltijd(id) {
 const maaltijdForm = document.getElementById('maaltijd-form');
 
 if (maaltijdForm) {
-    // Datum automatisch op vandaag zetten
     document.getElementById('datum').valueAsDate = new Date();
 
     maaltijdForm.addEventListener('submit', function(e) {
         e.preventDefault();
 
         const maaltijd = {
-            categorie:   document.getElementById('categorie').value,
-            datum:       document.getElementById('datum').value,
+            categorie:    document.getElementById('categorie').value,
+            datum:        document.getElementById('datum').value,
             omschrijving: document.getElementById('omschrijving').value,
-            kcal:        Number(document.getElementById('kcal').value)
+            kcal:         Number(document.getElementById('kcal').value)
         };
 
         voegMaaltijdToe(maaltijd);
-
-        // Formulier leegmaken
         maaltijdForm.reset();
         document.getElementById('datum').valueAsDate = new Date();
 
         alert('Maaltijd opgeslagen!');
-
-        // Ga naar dashboard
         window.location.href = 'dashboard.html';
     });
 }
@@ -116,7 +121,6 @@ function toonDashboard() {
         </div>
     `).join('');
 
-    // Verwijder knoppen koppelen
     document.querySelectorAll('.knop-verwijder').forEach(knop => {
         knop.addEventListener('click', function() {
             const id = Number(this.dataset.id);
