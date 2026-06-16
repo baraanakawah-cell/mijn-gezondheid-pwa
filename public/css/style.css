@@ -1,0 +1,71 @@
+/* ===== VARIABELEN ===== */
+:root {
+    --kleur-primair: #2E7D32;
+    --kleur-donker: #1B5E20;
+    --kleur-achtergrond: #F8F9FA;
+    --radius: 12px;
+}
+
+/* ===== RESET ===== */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background: var(--kleur-achtergrond);
+}
+
+/* ===== HEADER ===== */
+.app-header {
+    background: var(--kleur-primair);
+    color: white;
+    padding: 16px 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+/* ===== NAVIGATIE ===== */
+nav {
+    display: flex;
+    gap: 8px;
+}
+
+nav a {
+    color: rgba(255,255,255,.8);
+    text-decoration: none;
+    padding: 6px 12px;
+    border-radius: 8px;
+}
+
+nav a:hover {
+    background: rgba(255,255,255,.2);
+    color: white;
+}
+
+/* ===== MAIN CONTENT ===== */
+main {
+    max-width: 700px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+/* ===== KAARTEN GRID ===== */
+.kaarten-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 16px;
+    margin-top: 20px;
+}
+
+/* ===== FOOTER ===== */
+footer {
+    margin-top: 40px;
+    color: #888;
+    font-size: 0.85rem;
+    text-align: center;
+    padding: 20px;
+}
