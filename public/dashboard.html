@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Dashboard - Mijn Gezondheid</title>
     <link rel="stylesheet" href="/css/style.css">
+    <link rel="manifest" href="/manifest.json">
 </head>
 <body>
 
@@ -13,6 +14,11 @@
     </header>
 
     <main>
+        <section class="diagram-sectie">
+            <h2>Ingenomen vs verbrande kcal</h2>
+            <div id="diagram" class="diagram"></div>
+        </section>
+
         <section class="periode-filter">
             <button class="filter-knop actief" data-periode="dag">Dag</button>
             <button class="filter-knop" data-periode="week">Week</button>
@@ -28,6 +34,7 @@
         <a href="index.html">Home</a>
         <a href="dashboard.html" class="actief">Dashboard</a>
         <a href="toevoegen.html">Add</a>
+        <a href="sport.html">Sport</a>
         <a href="about.html">About</a>
         <a href="contact.html">Contact</a>
     </nav>

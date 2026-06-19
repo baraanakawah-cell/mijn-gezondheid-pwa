@@ -307,3 +307,129 @@ main {
     line-height: 1.6;
     margin-bottom: 4px;
 }
+/* ===== RESULTAAT KAART ===== */
+.resultaat-kaart {
+    background: var(--kleur-wit);
+    border-radius: var(--radius);
+    box-shadow: var(--schaduw);
+    padding: 16px;
+    margin-top: 20px;
+}
+
+.resultaat-kaart h2 {
+    font-size: 1rem;
+    color: var(--kleur-primair);
+    margin-bottom: 8px;
+}
+
+.resultaat-kaart p {
+    font-size: 0.95rem;
+    color: var(--kleur-tekst);
+    line-height: 1.6;
+}
+/* ===== DIAGRAM ===== */
+.diagram-sectie {
+    margin-bottom: 24px;
+}
+
+.diagram-sectie h2 {
+    font-size: 1rem;
+    color: var(--kleur-tekst);
+    margin-bottom: 12px;
+}
+
+.diagram {
+    background: var(--kleur-wit);
+    border-radius: var(--radius);
+    box-shadow: var(--schaduw);
+    padding: 16px;
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+}
+
+.diagram-rij {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+}
+
+.diagram-label {
+    display: flex;
+    justify-content: space-between;
+    font-size: 0.85rem;
+    color: var(--kleur-tekst);
+}
+
+.diagram-balk-achtergrond {
+    background: #eeeeee;
+    border-radius: 8px;
+    height: 14px;
+    overflow: hidden;
+}
+
+.diagram-balk {
+    height: 100%;
+    border-radius: 8px;
+}
+
+.diagram-balk.ingenomen {
+    background: #2E7D32;
+}
+
+.diagram-balk.verbrand {
+    background: #FFA726;
+}
+/* ===== DIAGRAM ===== */
+.diagram-sectie {
+    margin-bottom: 24px;
+}
+
+.diagram-sectie h2 {
+    font-size: 1rem;
+    color: var(--kleur-tekst);
+    margin-bottom: 12px;
+}
+
+.diagram {
+    background: var(--kleur-wit);
+    border-radius: var(--radius);
+    box-shadow: var(--schaduw);
+    padding: 16px;
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+}
+
+.diagram-rij {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+}
+
+.diagram-label {
+    display: flex;
+    justify-content: space-between;
+    font-size: 0.85rem;
+    color: var(--kleur-tekst);
+}
+
+.diagram-balk-achtergrond {
+    background: #eeeeee;
+    border-radius: 8px;
+    height: 14px;
+    overflow: hidden;
+}
+
+.diagram-balk {
+    height: 100%;
+    border-radius: 8px;
+}
+
+.diagram-balk.ingenomen {
+    background: #2E7D32;
+}
+
+.diagram-balk.verbrand {
+    background: #FFA726;
+}

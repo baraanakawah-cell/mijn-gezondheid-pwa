@@ -14,7 +14,7 @@ if ('serviceWorker' in navigator) {
 }
 
 // =========================================
-// LOCALSTORAGE FUNCTIES
+// LOCALSTORAGE FUNCTIES - MAALTIJDEN
 // =========================================
 function getMaaltijden() {
     const data = localStorage.getItem('maaltijden');
@@ -36,6 +36,21 @@ function verwijderMaaltijd(id) {
     const maaltijden = getMaaltijden();
     const nieuw = maaltijden.filter(m => m.id !== id);
     saveMaaltijden(nieuw);
+}
+
+// =========================================
+// LOCALSTORAGE FUNCTIES - ACTIVITEITEN
+// =========================================
+function getActiviteiten() {
+    const data = localStorage.getItem('activiteiten');
+    return data ? JSON.parse(data) : [];
+}
+
+function voegActiviteitToe(activiteit) {
+    const activiteiten = getActiviteiten();
+    activiteit.id = Date.now();
+    activiteiten.push(activiteit);
+    localStorage.setItem('activiteiten', JSON.stringify(activiteiten));
 }
 
 // =========================================
@@ -166,3 +181,111 @@ if (recenteItems) {
         `).join('');
     }
 }
+
+// =========================================
+// PAGINA: SPORT BEREKENEN
+// =========================================
+const maaltijdSelect = document.getElementById('maaltijd-select');
+const sportSelect    = document.getElementById('sport-select');
+const gewichtInput   = document.getElementById('gewicht');
+const berekenKnop    = document.getElementById('bereken-knop');
+const resultaat      = document.getElementById('resultaat');
+const resultaatTekst = document.getElementById('resultaat-tekst');
+const bevestigKnop   = document.getElementById('bevestig-knop');
+
+if (maaltijdSelect) {
+
+    const opgeslagenGewicht = localStorage.getItem('gewicht');
+    if (opgeslagenGewicht) {
+        gewichtInput.value = opgeslagenGewicht;
+    }
+
+    const maaltijden = getMaaltijden();
+    maaltijden.forEach(m => {
+        const optie = document.createElement('option');
+        optie.value = m.kcal;
+        optie.textContent = `${m.omschrijving} (${m.kcal} kcal)`;
+        maaltijdSelect.appendChild(optie);
+    });
+
+    let huidigeBerekening = null;
+
+    berekenKnop.addEventListener('click', function() {
+        const kcal = Number(maaltijdSelect.value);
+        const met  = Number(sportSelect.value);
+        const gewicht = Number(gewichtInput.value);
+        const sportNaam = sportSelect.options[sportSelect.selectedIndex].text;
+
+        if (!kcal || !gewicht) {
+            alert('Vul je gewicht in en kies een maaltijd.');
+            return;
+        }
+
+        localStorage.setItem('gewicht', gewicht);
+
+        const tijdInUren = kcal / (met * gewicht);
+        const tijdInMinuten = Math.round(tijdInUren * 60);
+
+        resultaatTekst.textContent = `Om ${kcal} kcal te verbranden met ${sportNaam.toLowerCase()}, moet je ongeveer ${tijdInMinuten} minuten sporten.`;
+        resultaat.hidden = false;
+
+        huidigeBerekening = {
+            sport: sportNaam,
+            kcal: kcal,
+            datum: new Date().toISOString().split('T')[0]
+        };
+    });
+
+    bevestigKnop.addEventListener('click', function() {
+        if (!huidigeBerekening) return;
+
+        voegActiviteitToe(huidigeBerekening);
+        alert('Sport opgeslagen!');
+        resultaat.hidden = true;
+        huidigeBerekening = null;
+    });
+}
+
+// =========================================
+// DIAGRAM: INGENOMEN VS VERBRAND
+// =========================================
+const diagramElement = document.getElementById('diagram');
+
+function toonDiagram() {
+    if (!diagramElement) return;
+
+    const maaltijden = getMaaltijden();
+    const activiteiten = getActiviteiten();
+
+    const totaalIngenomen = maaltijden.reduce((som, m) => som + m.kcal, 0);
+    const totaalVerbrand = activiteiten.reduce((som, a) => som + a.kcal, 0);
+
+    const maxWaarde = Math.max(totaalIngenomen, totaalVerbrand, 1);
+
+    const percentageIngenomen = Math.round((totaalIngenomen / maxWaarde) * 100);
+    const percentageVerbrand = Math.round((totaalVerbrand / maxWaarde) * 100);
+
+    diagramElement.innerHTML = `
+        <div class="diagram-rij">
+            <div class="diagram-label">
+                <span>Ingenomen</span>
+                <span>${totaalIngenomen} kcal</span>
+            </div>
+            <div class="diagram-balk-achtergrond">
+                <div class="diagram-balk ingenomen" style="width: ${percentageIngenomen}%"></div>
+            </div>
+        </div>
+
+        <div class="diagram-rij">
+            <div class="diagram-label">
+                <span>Verbrand</span>
+                <span>${totaalVerbrand} kcal</span>
+            </div>
+            <div class="diagram-balk-achtergrond">
+                <div class="diagram-balk verbrand" style="width: ${percentageVerbrand}%"></div>
+            </div>
+        </div>
+    `;
+}
+
+toonDiagram();
