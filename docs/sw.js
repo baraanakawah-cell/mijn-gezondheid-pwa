@@ -5,14 +5,15 @@
 const CACHE_NAAM = 'mijn-gezondheid-v1';
 
 const BESTANDEN_OM_TE_CACHEN = [
-    '/index.html',
-    '/dashboard.html',
-    '/toevoegen.html',
-    '/about.html',
-    '/contact.html',
-    '/css/style.css',
-    '/js/app.js',
-    '/manifest.json'
+    'index.html',
+    'dashboard.html',
+    'toevoegen.html',
+    'about.html',
+    'contact.html',
+    'sport.html',
+    'css/style.css',
+    'js/app.js',
+    'manifest.json'
 ];
 
 // Installatie: bestanden in cache opslaan
