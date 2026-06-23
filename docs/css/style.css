@@ -1,0 +1,452 @@
+/* ===== VARIABELEN ===== */
+:root {
+    --kleur-primair: #2E7D32;
+    --kleur-donker: #1B5E20;
+    --kleur-achtergrond: #F8F9FA;
+    --kleur-wit: #ffffff;
+    --kleur-tekst: #212121;
+    --kleur-grijs: #888888;
+    --radius: 12px;
+    --schaduw: 0 2px 8px rgba(0,0,0,0.08);
+}
+
+/* ===== RESET ===== */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background: var(--kleur-achtergrond);
+    padding-bottom: 80px;
+    min-height: 100vh;
+}
+
+/* ===== HEADER ===== */
+.app-header {
+    background: var(--kleur-primair);
+    color: white;
+    padding: 16px 20px;
+    text-align: center;
+}
+
+.app-header h1 {
+    font-size: 1.3rem;
+}
+
+/* ===== MAIN ===== */
+main {
+    width: 100%;
+    max-width: 100%;
+    margin: 0 auto;
+    padding: 20px 16px;
+}
+
+@media (min-width: 1024px) {
+    main {
+        padding: 32px 48px;
+    }
+}
+
+/* ===== WELKOM SECTIE ===== */
+.welkom {
+    margin-bottom: 24px;
+}
+
+.welkom h2 {
+    font-size: 1.2rem;
+    color: var(--kleur-tekst);
+}
+
+.welkom p {
+    color: var(--kleur-grijs);
+    font-size: 0.9rem;
+    margin-top: 4px;
+}
+
+/* ===== ITEM KAARTEN ===== */
+.recente-items h2 {
+    font-size: 1rem;
+    color: var(--kleur-tekst);
+    margin-bottom: 12px;
+}
+
+.item-kaart {
+    background: var(--kleur-wit);
+    border-radius: var(--radius);
+    box-shadow: var(--schaduw);
+    padding: 14px 16px;
+    margin-bottom: 12px;
+}
+
+.item-info {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+}
+
+.item-kcal {
+    font-weight: bold;
+    color: var(--kleur-primair);
+    font-size: 1rem;
+}
+
+.item-datum {
+    font-size: 0.8rem;
+    color: var(--kleur-grijs);
+}
+
+.item-omschrijving {
+    font-size: 0.9rem;
+    color: var(--kleur-tekst);
+}
+
+/* ===== KNOP TOEVOEGEN ===== */
+.knop-toevoegen {
+    display: block;
+    margin-top: 24px;
+    background: var(--kleur-primair);
+    color: white;
+    text-align: center;
+    padding: 14px;
+    border-radius: var(--radius);
+    text-decoration: none;
+    font-size: 1rem;
+}
+
+.knop-toevoegen:hover {
+    background: var(--kleur-donker);
+}
+
+/* ===== BOTTOM NAVIGATIE ===== */
+.bottom-nav {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: var(--kleur-wit);
+    display: flex;
+    justify-content: space-around;
+    padding: 14px 0;
+    box-shadow: 0 -2px 8px rgba(0,0,0,0.1);
+}
+
+.bottom-nav a {
+    text-decoration: none;
+    color: var(--kleur-grijs);
+    font-size: 0.85rem;
+}
+
+.bottom-nav a.actief {
+    color: var(--kleur-primair);
+    font-weight: bold;
+}
+
+
+/* ===== FORMULIER ===== */
+.form-groep {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+    margin-bottom: 20px;
+}
+
+.form-groep label {
+    font-size: 0.9rem;
+    font-weight: bold;
+    color: var(--kleur-tekst);
+}
+
+.form-groep input,
+.form-groep select {
+    padding: 12px;
+    border: 1px solid #ddd;
+    border-radius: var(--radius);
+    font-size: 1rem;
+    background: var(--kleur-wit);
+}
+
+.form-groep input:focus,
+.form-groep select:focus {
+    outline: none;
+    border-color: var(--kleur-primair);
+}
+
+.knop-opslaan {
+    display: block;
+    width: 100%;
+    padding: 14px;
+    background: var(--kleur-primair);
+    color: white;
+    border: none;
+    border-radius: var(--radius);
+    font-size: 1rem;
+    cursor: pointer;
+}
+
+.knop-opslaan:hover {
+    background: var(--kleur-donker);
+}
+/* ===== PERIODE FILTER ===== */
+.periode-filter {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 20px;
+}
+
+.filter-knop {
+    flex: 1;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: var(--radius);
+    background: var(--kleur-wit);
+    font-size: 0.9rem;
+    cursor: pointer;
+}
+
+.filter-knop.actief {
+    background: var(--kleur-primair);
+    color: white;
+    border-color: var(--kleur-primair);
+}
+
+/* ===== ITEMS LIJST ===== */
+.geen-items {
+    color: var(--kleur-grijs);
+    text-align: center;
+    margin-top: 40px;
+}
+
+.dashboard-kaart {
+    background: var(--kleur-wit);
+    border-radius: var(--radius);
+    box-shadow: var(--schaduw);
+    padding: 14px 16px;
+    margin-bottom: 12px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.dashboard-kaart-info {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+}
+
+.dashboard-kaart-categorie {
+    font-size: 0.8rem;
+    color: var(--kleur-grijs);
+    text-transform: capitalize;
+}
+
+.dashboard-kaart-omschrijving {
+    font-size: 0.95rem;
+    color: var(--kleur-tekst);
+    font-weight: bold;
+}
+
+.dashboard-kaart-kcal {
+    font-size: 0.85rem;
+    color: var(--kleur-primair);
+}
+
+.knop-verwijder {
+    background: none;
+    border: none;
+    color: #e53935;
+    font-size: 0.8rem;
+    cursor: pointer;
+    padding: 6px 10px;
+    border-radius: 8px;
+}
+
+.knop-verwijder:hover {
+    background: #fdecea;
+}
+/* ===== TEXTAREA ===== */
+.form-groep textarea {
+    padding: 12px;
+    border: 1px solid #ddd;
+    border-radius: var(--radius);
+    font-size: 1rem;
+    background: var(--kleur-wit);
+    resize: vertical;
+    font-family: Arial, sans-serif;
+}
+
+.form-groep textarea:focus {
+    outline: none;
+    border-color: var(--kleur-primair);
+}
+
+/* ===== OVER SECTIE ===== */
+.over-sectie {
+    background: var(--kleur-wit);
+    border-radius: var(--radius);
+    box-shadow: var(--schaduw);
+    padding: 16px;
+    margin-bottom: 16px;
+}
+
+.over-sectie h2 {
+    font-size: 1rem;
+    color: var(--kleur-primair);
+    margin-bottom: 8px;
+}
+
+.over-sectie p {
+    font-size: 0.9rem;
+    color: var(--kleur-tekst);
+    line-height: 1.6;
+    margin-bottom: 4px;
+}
+/* ===== RESULTAAT KAART ===== */
+.resultaat-kaart {
+    background: var(--kleur-wit);
+    border-radius: var(--radius);
+    box-shadow: var(--schaduw);
+    padding: 16px;
+    margin-top: 20px;
+}
+
+.resultaat-kaart h2 {
+    font-size: 1rem;
+    color: var(--kleur-primair);
+    margin-bottom: 8px;
+}
+
+.resultaat-kaart p {
+    font-size: 0.95rem;
+    color: var(--kleur-tekst);
+    line-height: 1.6;
+}
+/* ===== DIAGRAM ===== */
+.diagram-sectie {
+    margin-bottom: 24px;
+}
+
+.diagram-sectie h2 {
+    font-size: 1rem;
+    color: var(--kleur-tekst);
+    margin-bottom: 12px;
+}
+
+.diagram {
+    background: var(--kleur-wit);
+    border-radius: var(--radius);
+    box-shadow: var(--schaduw);
+    padding: 16px;
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+}
+
+.diagram-rij {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+}
+
+.diagram-label {
+    display: flex;
+    justify-content: space-between;
+    font-size: 0.85rem;
+    color: var(--kleur-tekst);
+}
+
+.diagram-balk-achtergrond {
+    background: #eeeeee;
+    border-radius: 8px;
+    height: 14px;
+    overflow: hidden;
+}
+
+.diagram-balk {
+    height: 100%;
+    border-radius: 8px;
+}
+
+.diagram-balk.ingenomen {
+    background: #2E7D32;
+}
+
+.diagram-balk.verbrand {
+    background: #FFA726;
+}
+/* ===== DIAGRAM ===== */
+.diagram-sectie {
+    margin-bottom: 24px;
+}
+
+.diagram-sectie h2 {
+    font-size: 1rem;
+    color: var(--kleur-tekst);
+    margin-bottom: 12px;
+}
+
+.diagram {
+    background: var(--kleur-wit);
+    border-radius: var(--radius);
+    box-shadow: var(--schaduw);
+    padding: 16px;
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+}
+
+.diagram-rij {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+}
+
+.diagram-label {
+    display: flex;
+    justify-content: space-between;
+    font-size: 0.85rem;
+    color: var(--kleur-tekst);
+}
+
+.diagram-balk-achtergrond {
+    background: #eeeeee;
+    border-radius: 8px;
+    height: 14px;
+    overflow: hidden;
+}
+
+.diagram-balk {
+    height: 100%;
+    border-radius: 8px;
+}
+
+.diagram-balk.ingenomen {
+    background: #2E7D32;
+}
+
+.diagram-balk.verbrand {
+    background: #FFA726;
+}
+/* ===== HEADER ===== */
+.app-header {
+    background: linear-gradient(135deg, var(--kleur-primair), var(--kleur-donker));
+    color: white;
+    padding: 16px 20px;
+    text-align: center;
+}
+
+.app-header h1 {
+    font-size: 1.3rem;
+}
+
+.hero {
+    padding: 32px 20px;
+}
+
+.hero-tekst {
+    margin-top: 6px;
+    font-size: 0.9rem;
+    opacity: 0.9;
+}

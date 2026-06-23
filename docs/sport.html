@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sport - Mijn Gezondheid</title>
+    <link rel="stylesheet" href="/css/style.css">
+    <link rel="manifest" href="/manifest.json">
+    <link rel="manifest" href="/manifest.json">
+</head>
+<body>
+
+    <header class="app-header">
+        <h1>Sport berekenen</h1>
+    </header>
+
+    <main>
+        <section class="form-groep">
+            <label for="gewicht">Jouw gewicht (kg)</label>
+            <input type="number" id="gewicht" placeholder="Bijv. 70" min="1">
+        </section>
+
+        <section class="form-groep">
+            <label for="maaltijd-select">Kies een maaltijd</label>
+            <select id="maaltijd-select">
+                <option value="">Selecteer een maaltijd</option>
+            </select>
+        </section>
+
+        <section class="form-groep">
+            <label for="sport-select">Kies een sport</label>
+            <select id="sport-select">
+                <option value="3.5">Wandelen</option>
+                <option value="6.0">Fietsen</option>
+                <option value="9.8">Hardlopen</option>
+                <option value="7.0">Zwemmen</option>
+            </select>
+        </section>
+
+        <button id="bereken-knop" class="knop-opslaan">Berekenen</button>
+
+      <section id="resultaat" class="resultaat-kaart" hidden>
+    <h2>Resultaat</h2>
+    <p id="resultaat-tekst"></p>
+    <button id="bevestig-knop" class="knop-opslaan">Sport gedaan</button>
+      </section>
+
+    </main>
+
+    <nav class="bottom-nav">
+        <a href="index.html">Home</a>
+        <a href="dashboard.html">Dashboard</a>
+        <a href="toevoegen.html">Add</a>
+        <a href="sport.html" class="actief">Sport</a>
+        <a href="about.html">About</a>
+        <a href="contact.html">Contact</a>
+    </nav>
+
+    <script src="/js/app.js"></script>
+</body>
+</html>
