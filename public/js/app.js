@@ -125,7 +125,7 @@ function toonDashboard() {
     }
 
     itemsLijst.innerHTML = gefilterd.map(m => `
-        <div class="dashboard-kaart">
+    <div class="dashboard-kaart ${m.categorie}">
             <div class="dashboard-kaart-info">
                 <span class="dashboard-kaart-categorie">${m.categorie}</span>
                 <span class="dashboard-kaart-omschrijving">${m.omschrijving}</span>
@@ -289,3 +289,45 @@ function toonDiagram() {
 }
 
 toonDiagram();
+// =========================================
+// TAALSWITCH
+// =========================================
+const taalKnop = document.getElementById('taal-knop');
+
+function getHuidigeTaal() {
+    return localStorage.getItem('taal') || 'nl';
+}
+
+function setHuidigeTaal(taal) {
+    localStorage.setItem('taal', taal);
+}
+
+function vertaalPagina(taal) {
+    fetch(`lang/${taal}.json`)
+        .then(response => response.json())
+        .then(vertalingen => {
+            document.querySelectorAll('[data-i18n]').forEach(element => {
+                const sleutel = element.dataset.i18n;
+                if (vertalingen[sleutel]) {
+                    element.textContent = vertalingen[sleutel];
+                }
+            });
+        })
+        .catch(err => console.log('Vertaling laden mislukt:', err));
+}
+
+if (taalKnop) {
+    const huidigeTaal = getHuidigeTaal();
+    taalKnop.textContent = huidigeTaal === 'nl' ? 'EN' : 'NL';
+    vertaalPagina(huidigeTaal);
+
+    taalKnop.addEventListener('click', function() {
+        const nieuweTaal = getHuidigeTaal() === 'nl' ? 'en' : 'nl';
+        setHuidigeTaal(nieuweTaal);
+        taalKnop.textContent = nieuweTaal === 'nl' ? 'EN' : 'NL';
+        vertaalPagina(nieuweTaal);
+    });
+} else {
+    // Geen taalknop op deze pagina, maar wel teksten vertalen indien aanwezig
+    vertaalPagina(getHuidigeTaal());
+}

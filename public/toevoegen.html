@@ -5,54 +5,56 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Voeg maaltijd toe - Mijn Gezondheid</title>
     <link rel="stylesheet" href="/css/style.css">
+    <link rel="manifest" href="/manifest.json">
 </head>
 <body>
 
     <header class="app-header">
-        <h1>Voeg maaltijd toe</h1>
+        <button id="taal-knop" class="taal-knop">EN</button>
+        <h1 data-i18n="toevoegen_titel">Voeg maaltijd toe</h1>
     </header>
 
     <main>
         <form id="maaltijd-form">
 
             <div class="form-groep">
-                <label for="categorie">Maaltijd type</label>
+                <label for="categorie" data-i18n="label_type">Maaltijd type</label>
                 <select id="categorie" name="categorie" required>
-                    <option value="">Kies een type</option>
-                    <option value="ontbijt">Ontbijt</option>
-                    <option value="lunch">Lunch</option>
-                    <option value="diner">Diner</option>
-                    <option value="snack">Snack</option>
+                    <option value="" data-i18n="optie_kies_type">Kies een type</option>
+                    <option value="ontbijt" data-i18n="optie_ontbijt">Ontbijt</option>
+                    <option value="lunch" data-i18n="optie_lunch">Lunch</option>
+                    <option value="diner" data-i18n="optie_diner">Diner</option>
+                    <option value="snack" data-i18n="optie_snack">Snack</option>
                 </select>
             </div>
 
             <div class="form-groep">
-                <label for="datum">Datum</label>
+                <label for="datum" data-i18n="label_datum">Datum</label>
                 <input type="date" id="datum" name="datum" required>
             </div>
 
             <div class="form-groep">
-                <label for="omschrijving">Omschrijving</label>
+                <label for="omschrijving" data-i18n="label_omschrijving">Omschrijving</label>
                 <input type="text" id="omschrijving" name="omschrijving" placeholder="Bijv. Boterham met kaas" required>
             </div>
 
             <div class="form-groep">
-                <label for="kcal">Calorieën (kcal)</label>
+                <label for="kcal" data-i18n="label_kcal">Calorieën (kcal)</label>
                 <input type="number" id="kcal" name="kcal" placeholder="Bijv. 220" min="0" required>
             </div>
 
-            <button type="submit" class="knop-opslaan">Opslaan</button>
+            <button type="submit" class="knop-opslaan" data-i18n="knop_opslaan">Opslaan</button>
 
         </form>
     </main>
 
     <nav class="bottom-nav">
-        <a href="index.html">Home</a>
-        <a href="dashboard.html">Dashboard</a>
-        <a href="toevoegen.html" class="actief">Add</a>
-        <a href="about.html">About</a>
-        <a href="contact.html">Contact</a>
-        <a href="sport.html">Sport</a>
+        <a href="index.html" data-i18n="nav_home">Home</a>
+        <a href="dashboard.html" data-i18n="nav_dashboard">Dashboard</a>
+        <a href="toevoegen.html" class="actief" data-i18n="nav_add">Add</a>
+        <a href="about.html" data-i18n="nav_about">About</a>
+        <a href="contact.html" data-i18n="nav_contact">Contact</a>
+        <a href="sport.html" data-i18n="nav_sport">Sport</a>
     </nav>
 
     <script src="/js/app.js"></script>

@@ -6,54 +6,53 @@
     <title>Sport - Mijn Gezondheid</title>
     <link rel="stylesheet" href="/css/style.css">
     <link rel="manifest" href="/manifest.json">
-    <link rel="manifest" href="/manifest.json">
 </head>
 <body>
 
     <header class="app-header">
-        <h1>Sport berekenen</h1>
+        <button id="taal-knop" class="taal-knop">EN</button>
+        <h1 data-i18n="sport_titel">Sport berekenen</h1>
     </header>
 
     <main>
         <section class="form-groep">
-            <label for="gewicht">Jouw gewicht (kg)</label>
+            <label for="gewicht" data-i18n="label_gewicht">Jouw gewicht (kg)</label>
             <input type="number" id="gewicht" placeholder="Bijv. 70" min="1">
         </section>
 
         <section class="form-groep">
-            <label for="maaltijd-select">Kies een maaltijd</label>
+            <label for="maaltijd-select" data-i18n="label_kies_maaltijd">Kies een maaltijd</label>
             <select id="maaltijd-select">
-                <option value="">Selecteer een maaltijd</option>
+                <option value="" data-i18n="optie_selecteer_maaltijd">Selecteer een maaltijd</option>
             </select>
         </section>
 
         <section class="form-groep">
-            <label for="sport-select">Kies een sport</label>
+            <label for="sport-select" data-i18n="label_kies_sport">Kies een sport</label>
             <select id="sport-select">
-                <option value="3.5">Wandelen</option>
-                <option value="6.0">Fietsen</option>
-                <option value="9.8">Hardlopen</option>
-                <option value="7.0">Zwemmen</option>
+                <option value="3.5" data-i18n="sport_wandelen">Wandelen</option>
+                <option value="6.0" data-i18n="sport_fietsen">Fietsen</option>
+                <option value="9.8" data-i18n="sport_hardlopen">Hardlopen</option>
+                <option value="7.0" data-i18n="sport_zwemmen">Zwemmen</option>
             </select>
         </section>
 
-        <button id="bereken-knop" class="knop-opslaan">Berekenen</button>
+        <button id="bereken-knop" class="knop-opslaan" data-i18n="knop_berekenen">Berekenen</button>
 
-      <section id="resultaat" class="resultaat-kaart" hidden>
-    <h2>Resultaat</h2>
-    <p id="resultaat-tekst"></p>
-    <button id="bevestig-knop" class="knop-opslaan">Sport gedaan</button>
-      </section>
-
+        <section id="resultaat" class="resultaat-kaart" hidden>
+            <h2 data-i18n="resultaat_titel">Resultaat</h2>
+            <p id="resultaat-tekst"></p>
+            <button id="bevestig-knop" class="knop-opslaan" data-i18n="knop_sport_gedaan">Sport gedaan</button>
+        </section>
     </main>
 
     <nav class="bottom-nav">
-        <a href="index.html">Home</a>
-        <a href="dashboard.html">Dashboard</a>
-        <a href="toevoegen.html">Add</a>
-        <a href="sport.html" class="actief">Sport</a>
-        <a href="about.html">About</a>
-        <a href="contact.html">Contact</a>
+        <a href="index.html" data-i18n="nav_home">Home</a>
+        <a href="dashboard.html" data-i18n="nav_dashboard">Dashboard</a>
+        <a href="toevoegen.html" data-i18n="nav_add">Add</a>
+        <a href="sport.html" class="actief" data-i18n="nav_sport">Sport</a>
+        <a href="about.html" data-i18n="nav_about">About</a>
+        <a href="contact.html" data-i18n="nav_contact">Contact</a>
     </nav>
 
     <script src="/js/app.js"></script>

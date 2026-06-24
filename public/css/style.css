@@ -21,6 +21,7 @@ body {
     font-family: Arial, sans-serif;
     background: var(--kleur-achtergrond);
     padding-bottom: 80px;
+    min-height: 100vh;
 }
 
 /* ===== HEADER ===== */
@@ -37,9 +38,16 @@ body {
 
 /* ===== MAIN ===== */
 main {
-    max-width: 480px;
+    width: 100%;
+    max-width: 100%;
     margin: 0 auto;
     padding: 20px 16px;
+}
+
+@media (min-width: 1024px) {
+    main {
+        padding: 32px 48px;
+    }
 }
 
 /* ===== WELKOM SECTIE ===== */
@@ -136,19 +144,7 @@ main {
     font-weight: bold;
 }
 
-/* ===== RESPONSIVE: DESKTOP ===== */
-@media (min-width: 768px) {
-    main {
-        max-width: 700px;
-    }
 
-    .bottom-nav {
-        max-width: 700px;
-        left: 50%;
-        transform: translateX(-50%);
-        border-radius: 12px 12px 0 0;
-    }
-}
 /* ===== FORMULIER ===== */
 .form-groep {
     display: flex;
@@ -432,4 +428,46 @@ main {
 
 .diagram-balk.verbrand {
     background: #FFA726;
+}
+/* ===== HEADER ===== */
+.app-header {
+    background: linear-gradient(135deg, var(--kleur-primair), var(--kleur-donker));
+    color: white;
+    padding: 16px 20px;
+    text-align: center;
+}
+
+.app-header h1 {
+    font-size: 1.3rem;
+}
+
+.hero {
+    padding: 32px 20px;
+}
+
+.hero-tekst {
+    margin-top: 6px;
+    font-size: 0.9rem;
+    opacity: 0.9;
+}
+/* ===== TAALSWITCH KNOP ===== */
+.taal-knop {
+    position: absolute;
+    top: 16px;
+    right: 16px;
+    background: rgba(255,255,255,0.2);
+    border: 1px solid rgba(255,255,255,0.5);
+    color: white;
+    padding: 4px 10px;
+    border-radius: 6px;
+    font-size: 0.8rem;
+    cursor: pointer;
+}
+
+.taal-knop:hover {
+    background: rgba(255,255,255,0.3);
+}
+
+.app-header {
+    position: relative;
 }

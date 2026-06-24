@@ -5,35 +5,37 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Over - Mijn Gezondheid</title>
     <link rel="stylesheet" href="/css/style.css">
+    <link rel="manifest" href="/manifest.json">
 </head>
 <body>
 
     <header class="app-header">
-        <h1>Over de app</h1>
+        <button id="taal-knop" class="taal-knop">EN</button>
+        <h1 data-i18n="about_titel">Over de app</h1>
     </header>
 
     <main>
         <section class="over-sectie">
-            <h2>Mijn Gezondheid</h2>
-            <p>Met deze app houd je eenvoudig je dagelijkse voeding bij. Voeg maaltijden toe, bekijk je overzicht per dag, week of maand en blijf bewust bezig met je gezondheid.</p>
+            <h2 data-i18n="about_naam_app">Mijn Gezondheid</h2>
+            <p data-i18n="about_beschrijving">Met deze app houd je eenvoudig je dagelijkse voeding bij. Voeg maaltijden toe, bekijk je overzicht per dag, week of maand en blijf bewust bezig met je gezondheid.</p>
         </section>
 
         <section class="over-sectie">
-            <h2>Gemaakt door</h2>
-            <p>Naam: Baraa</p>
-            <p>Klas: B1S</p>
-            <p>School: Koning Willem I College</p>
-            <p>Module: Eenvoudige mobiele App</p>
+            <h2 data-i18n="about_gemaakt_door">Gemaakt door</h2>
+            <p><span data-i18n="about_naam_label">Naam</span>: Baraa</p>
+            <p><span data-i18n="about_klas_label">Klas</span>: B1S</p>
+            <p><span data-i18n="about_school_label">School</span>: Koning Willem I College</p>
+            <p><span data-i18n="about_module_label">Module</span>: Eenvoudige mobiele App</p>
         </section>
     </main>
 
     <nav class="bottom-nav">
-        <a href="index.html">Home</a>
-        <a href="dashboard.html">Dashboard</a>
-        <a href="toevoegen.html">Add</a>
-        <a href="about.html" class="actief">About</a>
-        <a href="contact.html">Contact</a>
-        <a href="sport.html">Sport</a>
+        <a href="index.html" data-i18n="nav_home">Home</a>
+        <a href="dashboard.html" data-i18n="nav_dashboard">Dashboard</a>
+        <a href="toevoegen.html" data-i18n="nav_add">Add</a>
+        <a href="about.html" class="actief" data-i18n="nav_about">About</a>
+        <a href="contact.html" data-i18n="nav_contact">Contact</a>
+        <a href="sport.html" data-i18n="nav_sport">Sport</a>
     </nav>
 
     <script src="/js/app.js"></script>

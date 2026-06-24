@@ -6,44 +6,45 @@
     <title>Mijn Gezondheid</title>
     <link rel="stylesheet" href="/css/style.css">
     <link rel="manifest" href="/manifest.json">
-    
 </head>
 <body>
 
-    <header class="app-header">
-        <h1>Mijn Gezondheid</h1>
-    </header>
+   <header class="app-header hero">
+    <button id="taal-knop" class="taal-knop">EN</button>
+    <h1>Mijn Gezondheid</h1>
+    <p class="hero-tekst">Houd je voeding bij en blijf gezond bezig</p>
+</header>
 
     <main>
-        <section class="welkom">
-            <h2>Welkom!</h2>
-            <p>Houd je gezondheid bij met deze app.</p>
-        </section>
+    <section class="welkom">
+        <h2 id="test-tekst" data-i18n="welkom_titel">Welkom!</h2>
+        <p data-i18n="welkom_tekst">Houd je gezondheid bij met deze app.</p>
+    </section>
 
-        <section class="recente-items" id="recente-items">
-            <h2>Recente invoer</h2>
+    <section class="recente-items" id="recente-items">
+        <h2 data-i18n="recente_invoer">Recente invoer</h2>
 
-            <article class="item-kaart">
-                <div class="item-info">
-                    <span class="item-kcal">220 kcal</span>
-                    <span class="item-datum">Tuesday, May 26, 2026</span>
-                    <span class="item-omschrijving">Boterham</span>
-                </div>
-            </article>
+        <article class="item-kaart">
+            <div class="item-info">
+                <span class="item-kcal">220 kcal</span>
+                <span class="item-datum">Tuesday, May 26, 2026</span>
+                <span class="item-omschrijving">Boterham</span>
+            </div>
+        </article>
 
-        </section>
+    </section>
 
-        <a href="toevoegen.html" class="knop-toevoegen">Voeg maaltijd toe</a>
-    </main>
+    <a href="toevoegen.html" class="knop-toevoegen" data-i18n="voeg_maaltijd_toe">Voeg maaltijd toe</a>
+</main>
 
     <nav class="bottom-nav">
-        <a href="index.html" class="actief">Home</a>
-        <a href="dashboard.html">Dashboard</a>
-        <a href="toevoegen.html">Add</a>
-        <a href="about.html">About</a>
-        <a href="contact.html">Contact</a>
-        <a href="sport.html">Sport</a>
-    </nav>
+    <a href="index.html" class="actief" data-i18n="nav_home">Home</a>
+    <a href="dashboard.html" data-i18n="nav_dashboard">Dashboard</a>
+    <a href="toevoegen.html" data-i18n="nav_add">Add</a>
+    <a href="about.html" data-i18n="nav_about">About</a>
+    <a href="contact.html" data-i18n="nav_contact">Contact</a>
+    <a href="sport.html" data-i18n="nav_sport">Sport</a>
+</nav>
 
     <script src="/js/app.js"></script>
 </body>

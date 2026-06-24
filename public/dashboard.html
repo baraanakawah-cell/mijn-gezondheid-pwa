@@ -10,33 +10,34 @@
 <body>
 
     <header class="app-header">
-        <h1>Dashboard</h1>
+        <button id="taal-knop" class="taal-knop">EN</button>
+        <h1 data-i18n="dashboard_titel">Dashboard</h1>
     </header>
 
     <main>
         <section class="diagram-sectie">
-            <h2>Ingenomen vs verbrande kcal</h2>
+            <h2 data-i18n="diagram_titel">Ingenomen vs verbrande kcal</h2>
             <div id="diagram" class="diagram"></div>
         </section>
 
         <section class="periode-filter">
-            <button class="filter-knop actief" data-periode="dag">Dag</button>
-            <button class="filter-knop" data-periode="week">Week</button>
-            <button class="filter-knop" data-periode="maand">Maand</button>
+            <button class="filter-knop actief" data-periode="dag" data-i18n="filter_dag">Dag</button>
+            <button class="filter-knop" data-periode="week" data-i18n="filter_week">Week</button>
+            <button class="filter-knop" data-periode="maand" data-i18n="filter_maand">Maand</button>
         </section>
 
         <section class="items-lijst" id="items-lijst">
-            <p class="geen-items">Nog geen items toegevoegd.</p>
+            <p class="geen-items" data-i18n="geen_items_periode">Nog geen items toegevoegd.</p>
         </section>
     </main>
 
     <nav class="bottom-nav">
-        <a href="index.html">Home</a>
-        <a href="dashboard.html" class="actief">Dashboard</a>
-        <a href="toevoegen.html">Add</a>
-        <a href="sport.html">Sport</a>
-        <a href="about.html">About</a>
-        <a href="contact.html">Contact</a>
+        <a href="index.html" data-i18n="nav_home">Home</a>
+        <a href="dashboard.html" class="actief" data-i18n="nav_dashboard">Dashboard</a>
+        <a href="toevoegen.html" data-i18n="nav_add">Add</a>
+        <a href="about.html" data-i18n="nav_about">About</a>
+        <a href="contact.html" data-i18n="nav_contact">Contact</a>
+        <a href="sport.html" data-i18n="nav_sport">Sport</a>
     </nav>
 
     <script src="/js/app.js"></script>
