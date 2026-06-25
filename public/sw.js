@@ -1,8 +1,7 @@
-// =========================================
 // SERVICE WORKER
-// =========================================
 
-const CACHE_NAAM = 'mijn-gezondheid-v1';
+
+const CACHE_NAAM = 'mijn-gezondheid-v2';
 
 const BESTANDEN_OM_TE_CACHEN = [
     'index.html',
@@ -13,7 +12,9 @@ const BESTANDEN_OM_TE_CACHEN = [
     'sport.html',
     'css/style.css',
     'js/app.js',
-    'manifest.json'
+    'manifest.json',
+    'lang/nl.json',
+    'lang/en.json'
 ];
 
 // Installatie: bestanden in cache opslaan
